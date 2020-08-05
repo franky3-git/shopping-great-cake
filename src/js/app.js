@@ -107,7 +107,6 @@ function putInCart (e) {
 	
 	const newItem = {name, price, src: srcImage};
 	cart.push(newItem);
-	log(cart);
 	renderCartItems();
 	saveCart();
 }
