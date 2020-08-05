@@ -13,6 +13,13 @@ const items = [
 	{name: 'super mega cake', img: 'src/img/cake8.jpg', price: 77.99 },
 	{name: 'necessary cake', img: 'src/img/cake9.jpg', price:85.99 }
 ];
+//set initial cart
+let cart;
+if(localStorage.getItem('cart')) {
+	cart = JSON.parse(localStorage.getItem('cart'));
+} else {
+	cart = [];
+}
 
 //BUTTONS
 const btnsRemoveFromCart = document.getElementsByClassName('cart-item-delete');
@@ -31,12 +38,13 @@ const shopItemsBox = document.getElementsByClassName('shop-items-box')[0];
 const template1 = document.querySelector('.template1');
 const template2 = document.querySelector('.template2');
 
-updateTotal();
+
 
 document.addEventListener('DOMContentLoaded', ready);
 
 function ready() {
 	init();
+	updateTotal();
 	
 	cartItemsBox.addEventListener('click', function(e) {
 		if(e.target.classList.contains('cart-item-delete')) {
@@ -69,22 +77,26 @@ function init() {
 		html = html.replace('%img%', currentItem.img);
 		
 		shopItemsBox.innerHTML += html;
-	})
+	});
+	renderCartItems();
 }
 
 
 function removeItemInCart (event) {
 	const target = event.target.parentElement;
-	target.remove();
-	updateTotal();
+	const nameItemRemove = target.querySelector('.cart-item-name').textContent;
+	const indexToRemove = cart.findIndex(item => nameItemRemove == item.name);
+	cart.splice(indexToRemove, 1);
+	renderCartItems();
+	saveCart();
 }
 
 function clearCart() {
 	if(confirm('Are you sure you want to clear the cart?')) {
-		cartItemsBox.innerHTML = '';
-		updateTotal();
-	}
-	
+		cart = [];
+		renderCartItems();
+		saveCart();
+	}	
 }
 
 function putInCart (e) {
@@ -93,25 +105,41 @@ function putInCart (e) {
 	const price = item.getElementsByClassName('actual-price')[0].textContent;
 	const srcImage = item.getElementsByClassName('shop-item-img')[0].firstElementChild.src;
 	
-	let html = template1.textContent;
-	html = html.replace('%name%', name);
-	html = html.replace('%price%', '$'+ price);
-	html = html.replace('%img%', srcImage);
-	
-	cartItemsBox.innerHTML += html;
+	const newItem = {name, price, src: srcImage};
+	cart.push(newItem);
+	log(cart);
+	renderCartItems();
+	saveCart();
+}
+
+function renderCartItems () {
+	cartItemsBox.innerHTML = '';
+	cart.forEach(item => {
+		
+		let html = template1.textContent;
+		html = html.replace('%name%', item.name);
+		html = html.replace('%price%', '$'+ item.price);
+		html = html.replace('%img%', item.src);
+
+		cartItemsBox.innerHTML += html;
+	});
 	updateTotal();
+}
+
+function saveCart() {
+	localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 function updateTotal () {
 	var total = 0;
 	var nb = 0;
-	if(!cartItems) {
+	/*if(!cart) {
 		return;
-	}
-	Array.prototype.slice.call(cartItems).forEach(item => {
+	}*/
+	cart.forEach(item => {
 		nb++;
-		const priceItem = item.getElementsByClassName('cart-item-price')[0];
-		total += parseFloat(priceItem.textContent.slice(1));
+		const priceItem = item.price;
+		total += parseFloat(priceItem);
 		
 	});
 	total = (total).toFixed(2);
@@ -120,7 +148,7 @@ function updateTotal () {
 	nberItemsInCart.textContent = nb;
 }
 
-
+//localStorage.clear();
 
 
 
