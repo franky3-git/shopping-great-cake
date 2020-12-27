@@ -94,7 +94,6 @@ function ready() {
 		});
 		total = (total).toFixed(2);
 
-		//return [];
 		displayTotal(total, nb)
 	}
 
