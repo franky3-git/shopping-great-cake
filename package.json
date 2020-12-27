@@ -1,0 +1,20 @@
+{
+  "name": "shopping-great-cake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franky3-git/shopping-great-cake.git"
+  },
+  "keywords": [],
+  "author": "frank ndounga <frankndounga311@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franky3-git/shopping-great-cake/issues"
+  },
+  "homepage": "https://github.com/franky3-git/shopping-great-cake#readme"
+}
