@@ -1,3 +1,4 @@
+/* GENERAL STYLING */
 :root {
 	--logo-color: #FF5576;
 	--header-color: aliceblue;
@@ -12,6 +13,10 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+/* GENERAL STYLING END */
+
+/* HEADER STYLING */
 header {
 	display: flex;
 	justify-content: space-between;
@@ -49,7 +54,7 @@ header {
 }
 .btn-cart-box {
 	border: solid;
-	display: inline-block;
+	/* display: inline-block; */
 	padding: 5px 7px;
 	border-radius: 5px;
 	font-size: 1.1rem;
@@ -57,12 +62,14 @@ header {
 }
 .btn-cart-box:hover {
 	color: aliceblue;
-	background: var(--logo-color);
+	background-color: var(--logo-color);
 }
 .fa-shopping-cart {
 	margin-right: 10px;
 }
-/* END STYLE THE HEADER */
+/* END HEADER STYLING */
+
+/* BANNER STYLING */
 
 .banner {
 	display: flex;
@@ -94,6 +101,7 @@ header {
 
 /* END OF BANNER SECTION */
 
+/* DETAIL SELECTED ITEMS STYLING */
 .cart-box {
 	position: fixed;
 	right: 0;
@@ -159,7 +167,9 @@ i {
 	color: var(--logo-color);
 }
 
-/*END OF CART BOX STYLE */
+/* END DETAIL SELECTED ITEMS STYLING */
+
+/* ABOUT SECTION STYLING */
 .about {
 	display: flex;
 	padding: 25px 35px;
@@ -181,6 +191,10 @@ h2 span {
 	margin: 20px 0;
 	border: solid 1px;
 }
+.about .btn-explore:hover {
+	color: aliceblue;
+	background: var(--logo-color);
+}
 .sub-back-square {
 	border: solid 5px var(--logo-color);
 	width: 70%;
@@ -197,6 +211,7 @@ h2 span {
 }
 /* END OF ABOUT SECTION */
 
+/* SHOP SECTION START */
 .btns-shop {
 	text-align: center;
 }
@@ -210,8 +225,10 @@ h2 span {
 	background: var(--logo-color);
 }
 .filter-box {
-	text-align: center;
 	margin: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .filter-box i {
 	padding: 13px;
@@ -219,6 +236,8 @@ h2 span {
 	color: aliceblue;
 	cursor: pointer;
 	box-shadow: 0 0 5px rgba(0,0,0,.5);
+	display: inline-block;
+	border-radius: 3px;
 }
 .filter-box input {
 	padding: 13px;
@@ -244,7 +263,6 @@ h2 span {
 	grid-template-rows: 80% 20%;
 	cursor: pointer;
 	box-shadow: 0 0 5px rgba(0,0,0,.4);
-	
 }
 .shop-item-img {
 	grid-column: 1 / -1;
@@ -286,7 +304,6 @@ h2 span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: ;
 	transition: .2s;
 	transform-origin: bottom right;
 	transform: rotate(90deg);
@@ -301,7 +318,7 @@ h2 span {
 .btn-add-to-cart:hover {
 	background-color: var(--logo-color);	
 }
-
+/* END SHOP SECTION STYLING */
 
 
 

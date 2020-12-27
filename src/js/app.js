@@ -7,8 +7,8 @@ const items = [
 	{name: 'cake imperial', img: 'src/img/cake2.jpg', price: 35.99 },
 	{name: 'cake bullets', img: 'src/img/cake3.jpg', price: 10.33 },
 	{name: 'pleasant warrior', img: 'src/img/cake4.jpg', price: 45.70 },
-	{name: 'sweet like pussy', img: 'src/img/cake5.jpg', price: 5.87 },
-	{name: 'strong dick', img: 'src/img/cake6.jpg', price: 157.55 },
+	{name: 'special cake', img: 'src/img/cake5.jpg', price: 5.87 },
+	{name: 'more than cake', img: 'src/img/cake6.jpg', price: 157.55 },
 	{name: 'schweeps 4', img: 'src/img/cake7.jpg', price: 23.63 },
 	{name: 'super mega cake', img: 'src/img/cake8.jpg', price: 77.99 },
 	{name: 'necessary cake', img: 'src/img/cake9.jpg', price:85.99 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/franky3-git/shopping-great-cake/issues"
   },
-  "homepage": "https://github.com/franky3-git/shopping-great-cake#readme"
+  "homepage": "https://github.com/franky3-git/shopping-great-cake#readme",
+  "devDependencies": {
+    "webpack": "^5.11.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
